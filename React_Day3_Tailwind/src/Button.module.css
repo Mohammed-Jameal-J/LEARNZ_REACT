@@ -1,0 +1,11 @@
+.primaryButton{
+    background-color: black;
+    color: aliceblue;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.large{
+    font-size: 25px;
+}
