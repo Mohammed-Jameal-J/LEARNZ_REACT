@@ -4,7 +4,7 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useDispatch } from 'react-redux';
 
-const UserForm = () => {
+const UserForm = ({ user }) => {
     const dispatch = useDispatch();
 
     const schema = z.object({
@@ -16,19 +16,30 @@ const UserForm = () => {
         resolver: zodResolver(schema),
     });
     const onSubmit = (data) => {
+      if (user) {
+        const action = { type: "UPDATE_USER", payload: {id: user.id, ...data} };
+        dispatch(action);
+      } else {
         const action = { type: "ADD_USER", payload: {id: Date.now(), ...data} };
         dispatch(action);
-        reset();
+      }
+      reset();
     }
 
+    // useEffect(() => {
+    //     setValue("name", "Jameal");
+    //     setValue("email", "jameal@gmail.com");
+    // }, []);
     useEffect(() => {
-        setValue("name", "Jameal");
-        setValue("email", "jameal@gmail.com");
-    }, []);
-    
+        if (user) {
+            setValue("name", user.name);
+            setValue("email", user.email);
+        }
+    }, [user]);
+
   return (
     <>
-    <h1>Add User</h1>
+    <h1>{user ? "Edit User" : "Add User"}</h1>
     <form onSubmit={handleSubmit(onSubmit)}>
       <input {...register("name")} type="text" placeholder='Name' />
       {errors.name && <p>{errors.name.message}</p>}
@@ -36,7 +47,7 @@ const UserForm = () => {
       <input {...register("email")} type="email" placeholder='Email' />
       {errors.email && <p>{errors.email.message}</p>}
       <br />
-      <button type="submit">Add User</button>
+      <button type="submit">{user ? "Update User" : "Add User"}</button>
     </form>
     </>
   )
