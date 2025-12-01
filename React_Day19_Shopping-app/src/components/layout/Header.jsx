@@ -29,7 +29,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-1">
               <Phone size={16} />
-              <span>+201234567890</span>
+              <span>+91</span>
             </div>
             <span className="hidden sm:inline">
               Get 50% Off on Selected Items

@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetCategoriesQuery } from "../store/api/productsApi";
 import { setFilter } from "../store/slices/productsSlice";
 import { ChevronDown } from "lucide-react";
 
 export default function FilterSidebar() {
+  const [isCategoriesOpen, setIsCategoriesOpen] = useState(true);
+  const [isPriceOpen, setIsPriceOpen] = useState(true);
   const dispatch = useDispatch();
   const { data: categories } = useGetCategoriesQuery();
   const filter = useSelector((state) => state.products.filter);
@@ -29,59 +32,79 @@ export default function FilterSidebar() {
     <div className="bg-white rounded-lg shadow-md p-6 h-fit sticky top-24">
       {/* Category Filter */}
       <div className="mb-8">
-        <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+        <button
+          onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
+          className="w-full text-lg font-bold text-gray-900 mb-4 flex items-center hover:text-blue-600 transition"
+        >
           Categories
-          <ChevronDown size={20} className="ml-auto" />
-        </h3>
-        <div className="space-y-3">
-          <button
-            onClick={() => handleCategoryChange("")}
-            className={`w-full text-left px-3 py-2 rounded-lg transition ${
-              filter.category === ""
-                ? "bg-blue-100 text-blue-600 font-semibold"
-                : "text-gray-700 hover:bg-gray-100"
+          <ChevronDown
+            size={20}
+            className={`ml-auto transition-transform ${
+              isCategoriesOpen ? "rotate-180" : ""
             }`}
-          >
-            All Categories
-          </button>
-          {categories?.map((category) => (
+          />
+        </button>
+        {isCategoriesOpen && (
+          <div className="space-y-3">
             <button
-              key={category}
-              onClick={() => handleCategoryChange(category)}
-              className={`w-full text-left px-3 py-2 rounded-lg transition capitalize ${
-                filter.category === category
+              onClick={() => handleCategoryChange("")}
+              className={`w-full text-left px-3 py-2 rounded-lg transition ${
+                filter.category === ""
                   ? "bg-blue-100 text-blue-600 font-semibold"
                   : "text-gray-700 hover:bg-gray-100"
               }`}
             >
-              {category}
+              All Categories
             </button>
-          ))}
-        </div>
+            {categories?.map((category) => (
+              <button
+                key={category}
+                onClick={() => handleCategoryChange(category)}
+                className={`w-full text-left px-3 py-2 rounded-lg transition capitalize ${
+                  filter.category === category
+                    ? "bg-blue-100 text-blue-600 font-semibold"
+                    : "text-gray-700 hover:bg-gray-100"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Price Filter */}
       <div>
-        <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+        <button
+          onClick={() => setIsPriceOpen(!isPriceOpen)}
+          className="w-full text-lg font-bold text-gray-900 mb-4 flex items-center hover:text-blue-600 transition"
+        >
           Price
-          <ChevronDown size={20} className="ml-auto" />
-        </h3>
-        <div className="space-y-3">
-          {priceRanges.map((item) => (
-            <button
-              key={item.label}
-              onClick={() => handlePriceChange(item.range)}
-              className={`w-full text-left px-3 py-2 rounded-lg transition ${
-                filter.priceRange[0] === item.range[0] &&
-                filter.priceRange[1] === item.range[1]
-                  ? "bg-blue-100 text-blue-600 font-semibold"
-                  : "text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
+          <ChevronDown
+            size={20}
+            className={`ml-auto transition-transform ${
+              isPriceOpen ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+        {isPriceOpen && (
+          <div className="space-y-3">
+            {priceRanges.map((item) => (
+              <button
+                key={item.label}
+                onClick={() => handlePriceChange(item.range)}
+                className={`w-full text-left px-3 py-2 rounded-lg transition ${
+                  filter.priceRange[0] === item.range[0] &&
+                  filter.priceRange[1] === item.range[1]
+                    ? "bg-blue-100 text-blue-600 font-semibold"
+                    : "text-gray-700 hover:bg-gray-100"
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Clear Filters */}
