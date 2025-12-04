@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import {
   addToCart,
   addToFavorites,
@@ -9,6 +10,7 @@ import {
 import { Heart, ShoppingCart, Star } from "lucide-react";
 
 export default function ProductCard({ product }) {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const favorites = useSelector((state) => state.products.favorites);
   const isFavorited = favorites.some((item) => item.id === product.id);
@@ -92,7 +94,9 @@ export default function ProductCard({ product }) {
             }`}
           >
             <ShoppingCart size={18} />
-            <span>{isAdding ? "Added!" : "Add to Cart"}</span>
+            <span>
+              {isAdding ? t("productCard.added") : t("productCard.addToCart")}
+            </span>
           </button>
         </div>
       </div>

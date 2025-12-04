@@ -31,14 +31,44 @@
     "hindi": "ஹிந்தி"
   },
   "pages": {
-    "products": "பொருட்கள்",
+    "products": "எங்கள் பொருட்கள்",
+    "productsDescription": "தரமான பொருட்களின் எங்கள் சேகரணையை ஏறு",
     "categories": "வகைகள்",
     "deals": "ஆபத்துக்கள்",
     "whatsNew": "புதியவை",
+    "whatsNewDescription": "எங்கள் சமீபத்திய வருகைகள் மற்றும் பிரபலமான பொருட்களைச் சரிபார்க்கவும். வார வாரம் புதிய உருப்படிகள் சேர்க்கப்பட்டு.",
     "delivery": "விநியோகம்",
-    "favorites": "பிரியமானவை",
+    "favorites": "என் பிரியமானவை",
+    "noFavoritesYet": "இதுவரை பிரியமானவை கிடையாது",
+    "startAddingFavorites": "உங்கள் பிரியமானவற்றுக்கு பொருட்களைச் சேர்க்கத் தொடங்கவும்!",
+    "browseProducts": "பொருட்களைச் சேர்க",
     "cart": "வண்டி",
-    "account": "கணக்கு"
+    "yourCartEmpty": "உங்கள் வண்டி காலியாக உள்ளது",
+    "addProductsToCart": "தொடங்குவதற்கு சில பொருட்களைச் சேர்க்கவும்!",
+    "continueShopping": "வாங்கலை தொடரவும்",
+    "account": "கணக்கு",
+    "errorLoadingProducts": "பொருட்களை சுமக்க பிழை",
+    "errorLoadingNewProducts": "புதிய பொருட்களை சுமக்க பிழை"
+  },
+  "productCard": {
+    "addToCart": "வண்டியில் சேர்க்கவும்",
+    "added": "சேர்க்கப்பட்டது!",
+    "inStock": "கையில் உள்ளது",
+    "outOfStock": "கையில் இல்லை"
+  },
+  "cartPage": {
+    "cartSummary": "வண்டி சுருக்கம்",
+    "subtotal": "உபமொத்தம்",
+    "tax": "வரி (10%)",
+    "total": "மொத்தம்",
+    "removeItem": "அகற்று",
+    "quantity": "அளவு",
+    "confirmClearCart": "நீங்கள் உங்கள் வண்டியை தெளிவாக்க விரும்புகிறீர்களா?",
+    "clearCart": "வண்டியை தெளிவாக்கவும்",
+    "proceedToCheckout": "சரிபார்ப்பு செல்லலாம்",
+    "shippingInfo": "விநியோग தகவல்",
+    "billingAddress": "பணி முகவரி",
+    "paymentMethod": "பணி முறை"
   },
   "footer": {
     "shopziee": "Shopziee",
@@ -50,6 +80,8 @@
     "aboutUs": "எங்களைப் பற்றி",
     "contactUs": "தொடர்புக் கொள்ளவும்",
     "faq": "கேள்விகள்",
+    "shippingInfo": "விநியோக தகவல்",
+    "returns": "திரும்ப",
     "company": "நிறுவனம்",
     "aboutCompany": "நிறுவனத்தைப் பற்றி",
     "careers": "தொழில் வாய்ப்பு",

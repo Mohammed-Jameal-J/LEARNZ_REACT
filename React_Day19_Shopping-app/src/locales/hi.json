@@ -31,13 +31,61 @@
     "hindi": "हिन्दी"
   },
   "pages": {
-    "products": "उत्पाद",
+    "products": "हमारे उत्पाद",
+    "productsDescription": "गुणवत्ता वाले उत्पादों का हमारा संग्रह ब्राउज़ करें",
     "categories": "श्रेणियाँ",
     "deals": "डील्स",
     "whatsNew": "नया क्या है",
+    "whatsNewDescription": "हमारे नवीनतम आगमन और ट्रेंडिंग उत्पादों को देखें। हर सप्ताह नई वस्तुएं जोड़ी जाती हैं।",
     "delivery": "डिलीवरी",
-    "favorites": "पसंदीदा",
+    "favorites": "मेरे पसंदीदा",
+    "noFavoritesYet": "अभी तक कोई पसंदीदा नहीं",
+    "startAddingFavorites": "अपने पसंदीदा में उत्पाद जोड़ना शुरू करें!",
+    "browseProducts": "उत्पाद ब्राउज़ करें",
     "cart": "कार्ट",
-    "account": "खाता"
+    "yourCartEmpty": "आपकी कार्ट खाली है",
+    "addProductsToCart": "शुरुआत करने के लिए कुछ उत्पाद जोड़ें!",
+    "continueShopping": "खरीदारी जारी रखें",
+    "account": "खाता",
+    "errorLoadingProducts": "उत्पाद लोड करने में त्रुटि",
+    "errorLoadingNewProducts": "नए उत्पाद लोड करने में त्रुटि"
+  },
+  "productCard": {
+    "addToCart": "कार्ट में जोड़ें",
+    "added": "जोड़ा गया!",
+    "inStock": "स्टॉक में",
+    "outOfStock": "स्टॉक से बाहर"
+  },
+  "cartPage": {
+    "cartSummary": "कार्ट सारांश",
+    "subtotal": "उप-कुल",
+    "tax": "कर (10%)",
+    "total": "कुल",
+    "removeItem": "हटाएं",
+    "quantity": "मात्रा",
+    "confirmClearCart": "क्या आप वाकई अपनी कार्ट साफ़ करना चाहते हैं?",
+    "clearCart": "कार्ट साफ़ करें",
+    "proceedToCheckout": "चेकआउट के लिए आगे बढ़ें",
+    "shippingInfo": "शिपिंग जानकारी",
+    "billingAddress": "बिलिंग पता",
+    "paymentMethod": "भुगतान विधि"
+  },
+  "footer": {
+    "shopziee": "Shopziee",
+    "aboutDescription": "गुणवत्ता वाले उत्पादों के लिए बिल्कुल सही दुकान बेहतरीन कीमतों पर।",
+    "quickLinks": "त्वरित लिंक",
+    "home": "होम",
+    "products": "उत्पाद",
+    "support": "समर्थन",
+    "aboutUs": "हमारे बारे में",
+    "contactUs": "हमसे संपर्क करें",
+    "faq": "पूछे जाने वाले प्रश्न",
+    "shippingInfo": "शिपिंग जानकारी",
+    "returns": "रिटर्न",
+    "company": "कंपनी",
+    "aboutCompany": "कंपनी के बारे में",
+    "careers": "करियर",
+    "blog": "ब्लॉग",
+    "copyright": "© 2024 Shopziee. सर्वाधिकार सुरक्षित।"
   }
 }

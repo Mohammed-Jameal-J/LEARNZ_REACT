@@ -1,9 +1,11 @@
 import { useGetProductsQuery } from "../store/api/productsApi";
+import { useTranslation } from "react-i18next";
 import ProductCard from "../components/ProductCard";
 import Layout from "../components/layout/Layout";
 import { Sparkles } from "lucide-react";
 
 export default function WhatsNewPage() {
+  const { t } = useTranslation();
   const { data, isLoading, error } = useGetProductsQuery();
   const newProducts = data?.slice(0, 12) || [];
 
@@ -16,12 +18,11 @@ export default function WhatsNewPage() {
             <div className="flex items-center justify-center mb-4">
               <Sparkles className="text-purple-300 mr-3" size={40} />
               <h1 className="text-4xl sm:text-5xl font-bold text-white">
-                What's New
+                {t("header.whatsNew")}
               </h1>
             </div>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Check out our latest arrivals and trending products. Fresh
-              inventory added daily to bring you the best selection.
+              {t("pages.whatsNewDescription")}
             </p>
             <p className="text-purple-300 font-semibold mt-4">
               Updated Every Week with New Collections
@@ -71,7 +72,7 @@ export default function WhatsNewPage() {
               </div>
             ) : error ? (
               <div className="bg-red-500/20 backdrop-blur-md border border-red-300/50 rounded-lg p-4 text-red-200">
-                Error loading new products
+                {t("pages.errorLoadingNewProducts")}
               </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

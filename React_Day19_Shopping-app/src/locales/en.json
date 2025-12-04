@@ -31,14 +31,44 @@
     "hindi": "Hindi"
   },
   "pages": {
-    "products": "Products",
+    "products": "Our Products",
+    "productsDescription": "Browse our collection of quality products",
     "categories": "Categories",
     "deals": "Deals",
     "whatsNew": "What's New",
+    "whatsNewDescription": "Check out our latest arrivals and trending products. Fresh items added weekly.",
     "delivery": "Delivery",
-    "favorites": "Favorites",
+    "favorites": "My Favorites",
+    "noFavoritesYet": "No favorites yet",
+    "startAddingFavorites": "Start adding products to your favorites!",
+    "browseProducts": "Browse Products",
     "cart": "Cart",
-    "account": "Account"
+    "yourCartEmpty": "Your cart is empty",
+    "addProductsToCart": "Add some products to get started!",
+    "continueShopping": "Continue Shopping",
+    "account": "Account",
+    "errorLoadingProducts": "Error loading products",
+    "errorLoadingNewProducts": "Error loading new products"
+  },
+  "productCard": {
+    "addToCart": "Add to Cart",
+    "added": "Added!",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock"
+  },
+  "cartPage": {
+    "cartSummary": "Cart Summary",
+    "subtotal": "Subtotal",
+    "tax": "Tax (10%)",
+    "total": "Total",
+    "removeItem": "Remove",
+    "quantity": "Quantity",
+    "confirmClearCart": "Are you sure you want to clear your cart?",
+    "clearCart": "Clear Cart",
+    "proceedToCheckout": "Proceed to Checkout",
+    "shippingInfo": "Shipping Information",
+    "billingAddress": "Billing Address",
+    "paymentMethod": "Payment Method"
   },
   "footer": {
     "shopziee": "Shopziee",
@@ -50,6 +80,8 @@
     "aboutUs": "About Us",
     "contactUs": "Contact Us",
     "faq": "FAQ",
+    "shippingInfo": "Shipping Info",
+    "returns": "Returns",
     "company": "Company",
     "aboutCompany": "About Company",
     "careers": "Careers",

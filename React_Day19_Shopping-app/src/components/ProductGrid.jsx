@@ -4,6 +4,53 @@ import { useSelector } from "react-redux";
 import ProductCard from "./ProductCard";
 import { Loader } from "lucide-react";
 
+const customProducts = [
+  {
+    id: 1001,
+    title: "Labubu Toy - Angry Edition",
+    price: 45.99,
+    description:
+      "Cute Labubu collectible toy in vibrant red color. Perfect for collectors and fans.",
+    category: "labubu",
+    image: "/download.jpg",
+    rating: 4.8,
+    reviews: 234,
+  },
+  {
+    id: 1002,
+    title: "Labubu Toy - Couple Edition",
+    price: 45.99,
+    description:
+      "Adorable Labubu collectible toy in cool blue color. Great gift for toy enthusiasts.",
+    category: "labubu",
+    image: "/download (1).jpg",
+    rating: 4.7,
+    reviews: 189,
+  },
+  {
+    id: 1003,
+    title: "Labubu Toy - Pink Edition",
+    price: 45.99,
+    description:
+      "Sweet Labubu collectible toy in lovely pink color. Perfect for collectors.",
+    category: "labubu",
+    image: "/pink.jpg",
+    rating: 4.9,
+    reviews: 312,
+  },
+  {
+    id: 1004,
+    title: "Labubu Toy - Tiny Edition",
+    price: 45.99,
+    description:
+      "Cheerful Labubu collectible toy in bright yellow color. Fun and collectible.",
+    category: "labubu",
+    image: "/toy.jpg",
+    rating: 4.6,
+    reviews: 156,
+  },
+];
+
 export default function ProductGrid() {
   const { data: products, isLoading, error } = useGetProductsQuery();
   const filter = useSelector((state) => state.products.filter);
@@ -11,7 +58,9 @@ export default function ProductGrid() {
   const filteredProducts = useMemo(() => {
     if (!products) return [];
 
-    return products.filter((product) => {
+    const allProducts = [...products, ...customProducts];
+
+    return allProducts.filter((product) => {
       const categoryMatch =
         !filter.category || product.category === filter.category;
       const priceMatch =

@@ -1,35 +1,39 @@
+import { useTranslation } from "react-i18next";
+
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-slate-950 border-t border-emerald-500/20 text-slate-400 mt-16">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* About */}
           <div>
-            <h3 className="text-white text-lg font-bold mb-4">Shopziee</h3>
-            <p className="text-sm">
-              Your one-stop shop for quality products at great prices.
-            </p>
+            <h3 className="text-white text-lg font-bold mb-4">
+              {t("footer.shopziee")}
+            </h3>
+            <p className="text-sm">{t("footer.aboutDescription")}</p>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="text-white text-lg font-bold mb-4">
-              Quick Links
+              {t("footer.quickLinks")}
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="/" className="hover:text-emerald-400 transition">
-                  Home
+                  {t("footer.home")}
                 </a>
               </li>
               <li>
                 <a href="/" className="hover:text-emerald-400 transition">
-                  Products
+                  {t("footer.products")}
                 </a>
               </li>
               <li>
                 <a href="/cart" className="hover:text-emerald-400 transition">
-                  Cart
+                  {t("footer.cart")}
                 </a>
               </li>
               <li>
@@ -37,7 +41,7 @@ export default function Footer() {
                   href="/favorites"
                   className="hover:text-emerald-400 transition"
                 >
-                  Favorites
+                  {t("footer.favorites")}
                 </a>
               </li>
             </ul>
@@ -45,27 +49,28 @@ export default function Footer() {
 
           {/* Support */}
           <div>
-            <h3 className="text-white text-lg font-bold mb-4">Support</h3>
+            <h3 className="text-white text-lg font-bold mb-4">
+              {t("footer.support")}
+            </h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-emerald-400 transition">
-                  Contact Us
+                  {t("footer.contactUs")}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-emerald-400 transition">
-                  FAQ
+                  {t("footer.faq")}
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-emerald-400 transition">
-                  Shipping Info
+                  {t("footer.shippingInfo")}
                 </a>
               </li>
-              {/* \n{" "} */}
               <li>
                 <a href="#" className="hover:text-emerald-400 transition">
-                  Returns
+                  {t("footer.returns")}
                 </a>
               </li>
             </ul>
@@ -77,7 +82,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-emerald-400 transition">
-                  About Us
+                  {t("footer.aboutUs")}
                 </a>
               </li>
               <li>
@@ -92,7 +97,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#" className="hover:text-emerald-400 transition">
-                  Blog
+                  {t("footer.blog")}
                 </a>
               </li>
             </ul>
@@ -101,7 +106,7 @@ export default function Footer() {
 
         <div className="border-t border-emerald-500/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm">&copy; 2025 Shopziee. All rights reserved.</p>
+            <p className="text-sm">{t("footer.copyright")}</p>
             <div className="flex space-x-6 mt-4 md:mt-0 text-sm">
               <a href="#" className="hover:text-emerald-400 transition">
                 Facebook

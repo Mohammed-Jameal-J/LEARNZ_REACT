@@ -31,13 +31,61 @@
     "hindi": "الهندية"
   },
   "pages": {
-    "products": "المنتجات",
+    "products": "منتجاتنا",
+    "productsDescription": "تصفح مجموعتنا من المنتجات عالية الجودة",
     "categories": "الفئات",
     "deals": "صفقات",
     "whatsNew": "الجديد",
+    "whatsNewDescription": "تحقق من أحدث مواصلاتنا والمنتجات الشهيرة. تمت إضافة عناصر جديدة كل أسبوع.",
     "delivery": "التوصيل",
-    "favorites": "المفضلة",
+    "favorites": "المفضلة الخاصة بي",
+    "noFavoritesYet": "لا توجد مفضلة حتى الآن",
+    "startAddingFavorites": "ابدأ بإضافة المنتجات إلى المفضلة الخاصة بك!",
+    "browseProducts": "تصفح المنتجات",
     "cart": "سلة التسوق",
-    "account": "الحساب"
+    "yourCartEmpty": "سلة التسوق الخاصة بك فارغة",
+    "addProductsToCart": "أضف بعض المنتجات للبدء!",
+    "continueShopping": "متابعة التسوق",
+    "account": "الحساب",
+    "errorLoadingProducts": "خطأ في تحميل المنتجات",
+    "errorLoadingNewProducts": "خطأ في تحميل المنتجات الجديدة"
+  },
+  "productCard": {
+    "addToCart": "أضف إلى السلة",
+    "added": "تمت الإضافة!",
+    "inStock": "في المخزون",
+    "outOfStock": "غير متوفر"
+  },
+  "cartPage": {
+    "cartSummary": "ملخص السلة",
+    "subtotal": "المجموع الفرعي",
+    "tax": "الضريبة (10%)",
+    "total": "المجموع",
+    "removeItem": "إزالة",
+    "quantity": "الكمية",
+    "confirmClearCart": "هل تريد فعلاً مسح سلتك؟",
+    "clearCart": "مسح السلة",
+    "proceedToCheckout": "متابعة الدفع",
+    "shippingInfo": "معلومات الشحن",
+    "billingAddress": "عنوان الفواتير",
+    "paymentMethod": "طريقة الدفع"
+  },
+  "footer": {
+    "shopziee": "Shopziee",
+    "aboutDescription": "متجرك الشامل للمنتجات عالية الجودة بأسعار رائعة.",
+    "quickLinks": "روابط سريعة",
+    "home": "الصفحة الرئيسية",
+    "products": "المنتجات",
+    "support": "الدعم",
+    "aboutUs": "عنا",
+    "contactUs": "اتصل بنا",
+    "faq": "الأسئلة الشائعة",
+    "shippingInfo": "معلومات الشحن",
+    "returns": "العودة",
+    "company": "الشركة",
+    "aboutCompany": "حول الشركة",
+    "careers": "الوظائف",
+    "blog": "المدونة",
+    "copyright": "© 2024 Shopziee. جميع الحقوق محفوظة."
   }
 }

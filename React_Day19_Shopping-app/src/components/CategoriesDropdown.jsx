@@ -39,6 +39,18 @@ export default function CategoriesDropdown() {
                 {t("pages.categories")}
               </Link>
               <div className="border-t border-gray-200 my-2" />
+              {/* Trending Category */}
+              <Link
+                to={`/categories?cat=${encodeURIComponent("labubu")}`}
+                onClick={() => setIsOpen(false)}
+                className="flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 capitalize transition font-semibold"
+              >
+                <span>Labubu</span>
+                <span className="text-xs bg-red-500 text-white px-2 py-1 rounded-full">
+                  Trending
+                </span>
+              </Link>
+              <div className="border-t border-gray-200 my-2" />
               {categories.map((category) => (
                 <Link
                   key={category}

@@ -1,9 +1,12 @@
+import { useTranslation } from "react-i18next";
 import FilterSidebar from "../components/FilterSidebar";
 import ProductGrid from "../components/ProductGrid";
 import HeroSlider from "../components/HeroSlider";
 import Layout from "../components/layout/Layout";
 
 export default function ProductsPage() {
+  const { t } = useTranslation();
+
   return (
     <Layout>
       {/* Hero Slider Section */}
@@ -13,11 +16,9 @@ export default function ProductsPage() {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="mb-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
-            Our Products
+            {t("pages.products")}
           </h2>
-          <p className="text-gray-600">
-            Browse our collection of quality products
-          </p>
+          <p className="text-gray-600">{t("pages.productsDescription")}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import {
   removeFromCart,
   updateCartQuantity,
@@ -9,6 +10,7 @@ import Layout from "../components/layout/Layout";
 import { Trash2, Plus, Minus, ShoppingCart, ArrowRight } from "lucide-react";
 
 export default function CartPage() {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.products.cart);
 
@@ -27,7 +29,7 @@ export default function CartPage() {
   };
 
   const handleClearCart = () => {
-    if (window.confirm("Are you sure you want to clear your cart?")) {
+    if (window.confirm(t("cartPage.confirmClearCart"))) {
       dispatch(clearCart());
     }
   };
@@ -38,16 +40,14 @@ export default function CartPage() {
         <div className="max-w-7xl mx-auto px-4 py-16 text-center">
           <ShoppingCart size={64} className="mx-auto text-gray-300 mb-4" />
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Your cart is empty
+            {t("pages.yourCartEmpty")}
           </h1>
-          <p className="text-gray-600 mb-8">
-            Add some products to get started!
-          </p>
+          <p className="text-gray-600 mb-8">{t("pages.addProductsToCart")}</p>
           <Link
             to="/"
             className="inline-flex items-center space-x-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
           >
-            <span>Continue Shopping</span>
+            <span>{t("pages.continueShopping")}</span>
             <ArrowRight size={20} />
           </Link>
         </div>
@@ -58,7 +58,9 @@ export default function CartPage() {
   return (
     <Layout>
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">Shopping Cart</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">
+          {t("pages.cart")}
+        </h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Cart Items */}
@@ -70,10 +72,10 @@ export default function CartPage() {
                   Product
                 </div>
                 <div className="col-span-2 font-semibold text-gray-900 text-center">
-                  Price
+                  {t("cartPage.subtotal")}
                 </div>
                 <div className="col-span-3 font-semibold text-gray-900 text-center">
-                  Quantity
+                  {t("cartPage.quantity")}
                 </div>
                 <div className="col-span-2 font-semibold text-gray-900 text-center">
                   Total
@@ -116,7 +118,9 @@ export default function CartPage() {
                         {/* Mobile: Quantity and Total */}
                         <div className="md:hidden mt-3 space-y-2">
                           <div className="flex items-center space-x-2">
-                            <span className="text-sm text-gray-600">Qty:</span>
+                            <span className="text-sm text-gray-600">
+                              {t("cartPage.quantity")}:
+                            </span>
                             <div className="flex items-center border border-gray-300 rounded">
                               <button
                                 onClick={() =>
@@ -195,7 +199,7 @@ export default function CartPage() {
               to="/"
               className="inline-block mt-6 px-6 py-2 text-blue-600 font-semibold hover:text-blue-700"
             >
-              ← Continue Shopping
+              ← {t("pages.continueShopping")}
             </Link>
           </div>
 
@@ -203,16 +207,18 @@ export default function CartPage() {
           <div className="lg:col-span-1">
             <div className="bg-white rounded-lg shadow-md p-6 h-fit sticky top-24">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Order Summary
+                {t("cartPage.cartSummary")}
               </h2>
 
               <div className="space-y-4 mb-6 pb-6 border-b border-gray-200">
                 <div className="flex justify-between text-gray-700">
-                  <span>Subtotal ({cart.length} items)</span>
+                  <span>
+                    {t("cartPage.subtotal")} ({cart.length} items)
+                  </span>
                   <span className="font-semibold">${total.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-gray-700">
-                  <span>Tax (10%)</span>
+                  <span>{t("cartPage.tax")}</span>
                   <span className="font-semibold">${tax.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-gray-700">
@@ -229,14 +235,14 @@ export default function CartPage() {
               </div>
 
               <button className="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition mb-3">
-                Proceed to Checkout
+                {t("cartPage.proceedToCheckout")}
               </button>
 
               <button
                 onClick={handleClearCart}
                 className="w-full py-2 border border-red-300 text-red-600 rounded-lg font-semibold hover:bg-red-50 transition"
               >
-                Clear Cart
+                {t("cartPage.clearCart")}
               </button>
             </div>
           </div>
