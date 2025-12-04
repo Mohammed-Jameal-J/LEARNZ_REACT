@@ -1,0 +1,43 @@
+{
+  "header": {
+    "promotion": "اختر العناصر على خصم 50%",
+    "shopNow": "تسوق الآن",
+    "language": "Ar",
+    "location": "الموقع",
+    "connectWhatsApp": "تواصل عبر واتساب",
+    "categories": "الفئات",
+    "deals": "صفقات",
+    "whatsNew": "الجديد",
+    "delivery": "التوصيل",
+    "searchPlaceholder": "ابحث عن منتج",
+    "account": "الحساب",
+    "cart": "سلة التسوق",
+    "favorites": "المفضلة",
+    "mobileMenu": "القائمة"
+  },
+  "locations": {
+    "selectLocation": "الموقع",
+    "india": "الهند",
+    "pakistan": "باكستان",
+    "qatar": "قطر",
+    "dubai": "دبي",
+    "nigeria": "نيجيريا",
+    "unitedStates": "الولايات المتحدة"
+  },
+  "languages": {
+    "english": "الإنجليزية",
+    "tamil": "التاميل",
+    "arabic": "العربية",
+    "hindi": "الهندية"
+  },
+  "pages": {
+    "products": "المنتجات",
+    "categories": "الفئات",
+    "deals": "صفقات",
+    "whatsNew": "الجديد",
+    "delivery": "التوصيل",
+    "favorites": "المفضلة",
+    "cart": "سلة التسوق",
+    "account": "الحساب"
+  }
+}

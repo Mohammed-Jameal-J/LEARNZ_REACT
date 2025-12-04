@@ -1,0 +1,59 @@
+{
+  "header": {
+    "promotion": "Get 50% Off on Selected Items",
+    "shopNow": "Shop Now",
+    "language": "Eng",
+    "location": "Location",
+    "connectWhatsApp": "Connect on WhatsApp",
+    "categories": "Categories",
+    "deals": "Deals",
+    "whatsNew": "What's New",
+    "delivery": "Delivery",
+    "searchPlaceholder": "Search Product",
+    "account": "Account",
+    "cart": "Cart",
+    "favorites": "Favorites",
+    "mobileMenu": "Menu"
+  },
+  "locations": {
+    "selectLocation": "Location",
+    "india": "India",
+    "pakistan": "Pakistan",
+    "qatar": "Qatar",
+    "dubai": "Dubai",
+    "nigeria": "Nigeria",
+    "unitedStates": "United States"
+  },
+  "languages": {
+    "english": "English",
+    "tamil": "Tamil",
+    "arabic": "Arabic",
+    "hindi": "Hindi"
+  },
+  "pages": {
+    "products": "Products",
+    "categories": "Categories",
+    "deals": "Deals",
+    "whatsNew": "What's New",
+    "delivery": "Delivery",
+    "favorites": "Favorites",
+    "cart": "Cart",
+    "account": "Account"
+  },
+  "footer": {
+    "shopziee": "Shopziee",
+    "aboutDescription": "Your one-stop shop for quality products at great prices.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "products": "Products",
+    "support": "Support",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us",
+    "faq": "FAQ",
+    "company": "Company",
+    "aboutCompany": "About Company",
+    "careers": "Careers",
+    "blog": "Blog",
+    "copyright": "© 2024 Shopziee. All rights reserved."
+  }
+}

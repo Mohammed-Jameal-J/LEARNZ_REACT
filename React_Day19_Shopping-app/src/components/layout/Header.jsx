@@ -1,25 +1,59 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
 import {
   ShoppingCart,
   Heart,
   Search,
   Menu,
   X,
-  Phone,
+  MessageCircle,
   Globe,
   MapPin,
 } from "lucide-react";
 import CategoriesDropdown from "../CategoriesDropdown";
+import { setLanguage, setLocation } from "../../store/slices/languageSlice";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const dispatch = useDispatch();
+  const { t, i18n } = useTranslation();
   const { cart, favorites } = useSelector((state) => state.products);
+  const { language, location } = useSelector((state) => state.language);
 
   const cartCount = cart.length;
   const favoritesCount = favorites.length;
+
+  const handleLanguageChange = (e) => {
+    const lang = e.target.value;
+    dispatch(setLanguage(lang));
+    i18n.changeLanguage(lang);
+  };
+
+  const handleLocationChange = (e) => {
+    dispatch(setLocation(e.target.value));
+  };
+
+  const whatsappNumber = "918056411040";
+  const whatsappLink = `https://wa.me/${whatsappNumber}`;
+
+  const locationOptions = [
+    { code: "india", label: t("locations.india") },
+    { code: "pakistan", label: t("locations.pakistan") },
+    { code: "qatar", label: t("locations.qatar") },
+    { code: "dubai", label: t("locations.dubai") },
+    { code: "nigeria", label: t("locations.nigeria") },
+    { code: "unitedStates", label: t("locations.unitedStates") },
+  ];
+
+  const languageOptions = [
+    { code: "en", label: t("languages.english") },
+    { code: "ta", label: t("languages.tamil") },
+    { code: "ar", label: t("languages.arabic") },
+    { code: "hi", label: t("languages.hindi") },
+  ];
 
   return (
     <header className="sticky top-0 z-50">
@@ -27,24 +61,49 @@ export default function Header() {
       <div className="bg-gradient-to-r from-emerald-700 to-emerald-600 text-white py-2 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-sm">
           <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-1">
-              <Phone size={16} />
-              <span>+917010287420</span>
-            </div>
-            <span className="hidden sm:inline">
-              Get 50% Off on Selected Items
-            </span>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-1 hover:opacity-80 transition-opacity"
+            >
+              <MessageCircle size={16} />
+              <span className="hidden sm:inline">
+                {t("header.connectWhatsApp")}
+              </span>
+            </a>
+            <span className="hidden sm:inline">{t("header.promotion")}</span>
           </div>
           <div className="flex items-center space-x-4">
-            <button className="hover:underline">Shop Now</button>
-            <select className="bg-transparent text-white text-sm border border-white/30 rounded px-2 py-1 hover:border-white">
-              <option>Eng</option>
-              <option>Ar</option>
+            <button className="hover:underline">{t("header.shopNow")}</button>
+            <select
+              value={language}
+              onChange={handleLanguageChange}
+              className="bg-transparent text-white text-sm border border-white/30 rounded px-2 py-1 hover:border-white cursor-pointer"
+            >
+              {languageOptions.map((lang) => (
+                <option
+                  key={lang.code}
+                  value={lang.code}
+                  className="text-black"
+                >
+                  {lang.label}
+                </option>
+              ))}
             </select>
-            <select className="bg-transparent text-white text-sm border border-white/30 rounded px-2 py-1 hover:border-white">
-              <option>Location</option>
-              <option>Cairo</option>
-              <option>Giza</option>
+            <select
+              value={location}
+              onChange={handleLocationChange}
+              className="bg-transparent text-white text-sm border border-white/30 rounded px-2 py-1 hover:border-white cursor-pointer"
+            >
+              <option value="" className="text-black">
+                {t("locations.selectLocation")}
+              </option>
+              {locationOptions.map((loc) => (
+                <option key={loc.code} value={loc.code} className="text-black">
+                  {loc.label}
+                </option>
+              ))}
             </select>
           </div>
         </div>
@@ -57,9 +116,6 @@ export default function Header() {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2 shrink-0">
               <div className="flex items-center space-x-1">
-                {/* <div className="w-8 h-8 bg-emerald-600 rounded flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">🛒</span>
-                </div> */}
                 <div className="text-xl font-bold text-emerald-700">
                   Shopziee
                 </div>
@@ -73,19 +129,19 @@ export default function Header() {
                 to="/deals"
                 className="text-gray-700 font-semibold hover:text-emerald-600"
               >
-                Deals
+                {t("header.deals")}
               </Link>
               <Link
                 to="/what-new"
                 className="text-gray-700 font-semibold hover:text-emerald-600"
               >
-                What's New
+                {t("header.whatsNew")}
               </Link>
               <Link
                 to="/delivery"
                 className="text-gray-700 font-semibold hover:text-emerald-600"
               >
-                Delivery
+                {t("header.delivery")}
               </Link>
             </nav>
 
@@ -94,7 +150,7 @@ export default function Header() {
               <div className="w-full relative">
                 <input
                   type="text"
-                  placeholder="Search Product"
+                  placeholder={t("header.searchPlaceholder")}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-700"
@@ -118,7 +174,7 @@ export default function Header() {
                 className="hidden sm:flex items-center space-x-1 text-gray-700 hover:text-emerald-600 font-semibold"
               >
                 <span>👤</span>
-                <span className="hidden md:inline">Account</span>
+                <span className="hidden md:inline">{t("header.account")}</span>
               </Link>
 
               {/* Cart */}
@@ -149,7 +205,7 @@ export default function Header() {
             <div className="relative w-full">
               <input
                 type="text"
-                placeholder="Search Product"
+                placeholder={t("header.searchPlaceholder")}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-700"
@@ -169,28 +225,28 @@ export default function Header() {
                 className="block text-gray-700 font-semibold hover:text-emerald-600 py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Categories
+                {t("header.categories")}
               </Link>
               <Link
                 to="/deals"
                 className="block text-gray-700 font-semibold hover:text-emerald-600 py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Deals
+                {t("header.deals")}
               </Link>
               <Link
                 to="/what-new"
                 className="block text-gray-700 font-semibold hover:text-emerald-600 py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                What's New
+                {t("header.whatsNew")}
               </Link>
               <Link
                 to="/delivery"
                 className="block text-gray-700 font-semibold hover:text-emerald-600 py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Delivery
+                {t("header.delivery")}
               </Link>
               <hr className="my-3" />
               <Link
@@ -199,7 +255,7 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span>👤</span>
-                <span>Account</span>
+                <span>{t("header.account")}</span>
               </Link>
               <Link
                 to="/favorites"
@@ -207,7 +263,9 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Heart size={20} />
-                <span>Favorites ({favoritesCount})</span>
+                <span>
+                  {t("header.favorites")} ({favoritesCount})
+                </span>
               </Link>
             </nav>
           )}

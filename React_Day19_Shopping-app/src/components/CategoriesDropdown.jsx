@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { useGetCategoriesQuery } from "../store/api/productsApi";
 import { ChevronDown } from "lucide-react";
 
 export default function CategoriesDropdown() {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
   const { data: categories, isLoading } = useGetCategoriesQuery();
 
   return (
@@ -13,7 +15,7 @@ export default function CategoriesDropdown() {
         onClick={() => setIsOpen(!isOpen)}
         className="text-gray-700 font-semibold flex items-center space-x-1 hover:text-emerald-600 transition"
       >
-        <span>Categories</span>
+        <span>{t("header.categories")}</span>
         <ChevronDown
           size={18}
           className={`transition-transform ${isOpen ? "rotate-180" : ""}`}
@@ -25,7 +27,7 @@ export default function CategoriesDropdown() {
         <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg border border-gray-200 py-2 z-50">
           {isLoading ? (
             <div className="px-4 py-3 text-gray-500 text-sm">
-              Loading categories...
+              {t("pages.categories")}...
             </div>
           ) : categories && categories.length > 0 ? (
             <>
@@ -34,7 +36,7 @@ export default function CategoriesDropdown() {
                 onClick={() => setIsOpen(false)}
                 className="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 font-semibold transition"
               >
-                All Categories
+                {t("pages.categories")}
               </Link>
               <div className="border-t border-gray-200 my-2" />
               {categories.map((category) => (

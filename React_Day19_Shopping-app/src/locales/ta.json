@@ -1,0 +1,59 @@
+{
+  "header": {
+    "promotion": "தேர்ந்தெடுக்கப்பட்ட பொருட்களில் 50% தள்ளுபடி பெறவும்",
+    "shopNow": "இப்போது வாங்கவும்",
+    "language": "தமிழ்",
+    "location": "இருப்பிடம்",
+    "connectWhatsApp": "WhatsApp இல் இணைக்கவும்",
+    "categories": "வகைகள்",
+    "deals": "ஆபத்துக்கள்",
+    "whatsNew": "புதியவை",
+    "delivery": "விநியோகம்",
+    "searchPlaceholder": "பணியை தேடுங்கள்",
+    "account": "கணக்கு",
+    "cart": "வண்டி",
+    "favorites": "பிரியமானவை",
+    "mobileMenu": "மெனு"
+  },
+  "locations": {
+    "selectLocation": "இருப்பிடம்",
+    "india": "இந்தியா",
+    "pakistan": "பாகிஸ்தான்",
+    "qatar": "கட்டார்",
+    "dubai": "துபாய்",
+    "nigeria": "நைஜீரியா",
+    "unitedStates": "அமெரிக்க விளாசங்கள்"
+  },
+  "languages": {
+    "english": "ஆங்கிலம்",
+    "tamil": "தமிழ்",
+    "arabic": "அரபு",
+    "hindi": "ஹிந்தி"
+  },
+  "pages": {
+    "products": "பொருட்கள்",
+    "categories": "வகைகள்",
+    "deals": "ஆபத்துக்கள்",
+    "whatsNew": "புதியவை",
+    "delivery": "விநியோகம்",
+    "favorites": "பிரியமானவை",
+    "cart": "வண்டி",
+    "account": "கணக்கு"
+  },
+  "footer": {
+    "shopziee": "Shopziee",
+    "aboutDescription": "உங்கள் ஒரு-நிறுத்தம் கடை தரமான பொருட்களுக்கு சிறந்த விலையில்.",
+    "quickLinks": "விரைவு இணைப்புகள்",
+    "home": "முகப்பு",
+    "products": "பொருட்கள்",
+    "support": "ஆதரவு",
+    "aboutUs": "எங்களைப் பற்றி",
+    "contactUs": "தொடர்புக் கொள்ளவும்",
+    "faq": "கேள்விகள்",
+    "company": "நிறுவனம்",
+    "aboutCompany": "நிறுவனத்தைப் பற்றி",
+    "careers": "தொழில் வாய்ப்பு",
+    "blog": "வலைப்பதிவு",
+    "copyright": "© 2024 Shopziee. அனைத்து உரிமைகளும் வைக்கப்பட்டுள்ளன."
+  }
+}

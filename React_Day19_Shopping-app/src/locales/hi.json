@@ -1,0 +1,43 @@
+{
+  "header": {
+    "promotion": "चयनित वस्तुओं पर 50% छूट पाएं",
+    "shopNow": "अभी खरीदें",
+    "language": "हिन्दी",
+    "location": "स्थान",
+    "connectWhatsApp": "व्हाट्सएप पर जुड़ें",
+    "categories": "श्रेणियाँ",
+    "deals": "डील्स",
+    "whatsNew": "नया क्या है",
+    "delivery": "डिलीवरी",
+    "searchPlaceholder": "पणय खोजें",
+    "account": "खाता",
+    "cart": "कार्ट",
+    "favorites": "पसंदीदा",
+    "mobileMenu": "मेनू"
+  },
+  "locations": {
+    "selectLocation": "स्थान",
+    "india": "भारत",
+    "pakistan": "पाकिस्तान",
+    "qatar": "कतर",
+    "dubai": "दुबई",
+    "nigeria": "नाइजीरिया",
+    "unitedStates": "संयुक्त राज्य अमेरिका"
+  },
+  "languages": {
+    "english": "अंग्रेजी",
+    "tamil": "तमिल",
+    "arabic": "अरबी",
+    "hindi": "हिन्दी"
+  },
+  "pages": {
+    "products": "उत्पाद",
+    "categories": "श्रेणियाँ",
+    "deals": "डील्स",
+    "whatsNew": "नया क्या है",
+    "delivery": "डिलीवरी",
+    "favorites": "पसंदीदा",
+    "cart": "कार्ट",
+    "account": "खाता"
+  }
+}
