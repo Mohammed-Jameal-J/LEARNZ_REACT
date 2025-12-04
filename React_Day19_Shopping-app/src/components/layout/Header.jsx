@@ -60,7 +60,7 @@ export default function Header() {
       {/* Top Promotion Bar */}
       <div className="bg-gradient-to-r from-emerald-700 to-emerald-600 text-white py-2 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-sm">
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <a
               href={whatsappLink}
               target="_blank"
@@ -68,18 +68,22 @@ export default function Header() {
               className="flex items-center space-x-1 hover:opacity-80 transition-opacity"
             >
               <MessageCircle size={16} />
-              <span className="hidden sm:inline">
+              <span className="text-xs sm:text-sm">
                 {t("header.connectWhatsApp")}
               </span>
             </a>
-            <span className="hidden sm:inline">{t("header.promotion")}</span>
+            <span className="hidden sm:inline text-xs md:text-sm">
+              {t("header.promotion")}
+            </span>
           </div>
-          <div className="flex items-center space-x-4">
-            <button className="hover:underline">{t("header.shopNow")}</button>
+          <div className="flex items-center space-x-2 sm:space-x-4">
+            <button className="hidden sm:block hover:underline text-xs sm:text-sm">
+              {t("header.shopNow")}
+            </button>
             <select
               value={language}
               onChange={handleLanguageChange}
-              className="bg-transparent text-white text-sm border border-white/30 rounded px-2 py-1 hover:border-white cursor-pointer"
+              className="bg-transparent text-white text-xs sm:text-sm border border-white/30 rounded px-1 sm:px-2 py-1 hover:border-white cursor-pointer"
             >
               {languageOptions.map((lang) => (
                 <option
@@ -94,7 +98,7 @@ export default function Header() {
             <select
               value={location}
               onChange={handleLocationChange}
-              className="bg-transparent text-white text-sm border border-white/30 rounded px-2 py-1 hover:border-white cursor-pointer"
+              className="bg-transparent text-white text-xs sm:text-sm border border-white/30 rounded px-1 sm:px-2 py-1 hover:border-white cursor-pointer"
             >
               <option value="" className="text-black">
                 {t("locations.selectLocation")}
@@ -217,57 +221,68 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile Sidebar Menu */}
           {isMenuOpen && (
-            <nav className="lg:hidden mt-4 pb-4 border-t border-gray-200 pt-4 space-y-3">
-              <Link
-                to="/categories"
-                className="block text-gray-700 font-semibold hover:text-emerald-600 py-2"
+            <>
+              {/* Backdrop */}
+              <div
+                className="fixed inset-0 bg-black/50 z-30 lg:hidden"
                 onClick={() => setIsMenuOpen(false)}
-              >
-                {t("header.categories")}
-              </Link>
-              <Link
-                to="/deals"
-                className="block text-gray-700 font-semibold hover:text-emerald-600 py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t("header.deals")}
-              </Link>
-              <Link
-                to="/what-new"
-                className="block text-gray-700 font-semibold hover:text-emerald-600 py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t("header.whatsNew")}
-              </Link>
-              <Link
-                to="/delivery"
-                className="block text-gray-700 font-semibold hover:text-emerald-600 py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t("header.delivery")}
-              </Link>
-              <hr className="my-3" />
-              <Link
-                to="/account"
-                className="flex items-center space-x-2 text-gray-700 hover:text-emerald-600 font-semibold py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <span>👤</span>
-                <span>{t("header.account")}</span>
-              </Link>
-              <Link
-                to="/favorites"
-                className="flex items-center space-x-2 text-gray-700 hover:text-emerald-600 font-semibold py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Heart size={20} />
-                <span>
-                  {t("header.favorites")} ({favoritesCount})
-                </span>
-              </Link>
-            </nav>
+              ></div>
+
+              {/* Sidebar */}
+              <nav className="fixed left-0 top-[120px] h-[calc(100vh-120px)] w-64 bg-white shadow-xl z-40 lg:hidden overflow-y-auto animate-in slide-in-from-left-0 duration-300">
+                <div className="p-4 space-y-3">
+                  <Link
+                    to="/categories"
+                    className="block text-gray-700 font-semibold hover:text-emerald-600 py-2 px-3 hover:bg-emerald-50 rounded transition"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {t("header.categories")}
+                  </Link>
+                  <Link
+                    to="/deals"
+                    className="block text-gray-700 font-semibold hover:text-emerald-600 py-2 px-3 hover:bg-emerald-50 rounded transition"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {t("header.deals")}
+                  </Link>
+                  <Link
+                    to="/what-new"
+                    className="block text-gray-700 font-semibold hover:text-emerald-600 py-2 px-3 hover:bg-emerald-50 rounded transition"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {t("header.whatsNew")}
+                  </Link>
+                  <Link
+                    to="/delivery"
+                    className="block text-gray-700 font-semibold hover:text-emerald-600 py-2 px-3 hover:bg-emerald-50 rounded transition"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {t("header.delivery")}
+                  </Link>
+                  <hr className="my-3" />
+                  <Link
+                    to="/account"
+                    className="flex items-center space-x-2 text-gray-700 hover:text-emerald-600 font-semibold py-2 px-3 hover:bg-emerald-50 rounded transition"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <span>👤</span>
+                    <span>{t("header.account")}</span>
+                  </Link>
+                  <Link
+                    to="/favorites"
+                    className="flex items-center space-x-2 text-gray-700 hover:text-emerald-600 font-semibold py-2 px-3 hover:bg-emerald-50 rounded transition"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <Heart size={20} />
+                    <span>
+                      {t("header.favorites")} ({favoritesCount})
+                    </span>
+                  </Link>
+                </div>
+              </nav>
+            </>
           )}
         </div>
       </div>

@@ -72,15 +72,15 @@ export default function HeroSlider() {
             <div className={`absolute inset-0 ${slide.bgColor}`}></div>
 
             {/* Content Container */}
-            <div className="relative h-full flex items-center">
+            <div className="relative h-full flex items-center justify-center md:justify-start">
               <div className="max-w-7xl mx-auto w-full px-4 md:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center h-full py-8 md:py-0">
-                  {/* Text Content */}
-                  <div className="flex flex-col justify-center space-y-4 md:space-y-6">
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight">
+                  {/* Text Content - Centered on mobile */}
+                  <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-4 md:space-y-6">
+                    <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight">
                       {slide.title}
                     </h1>
-                    <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-md">
+                    <p className="text-gray-600 text-sm sm:text-base md:text-xl max-w-md">
                       {slide.description}
                     </p>
                     <div>
