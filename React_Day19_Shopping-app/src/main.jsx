@@ -5,7 +5,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import "./index.css";
 import App from "./App.jsx";
-import stor  from "./store";
+import store  from "./store";
 
 // Import translation files
 import en from "./locales/en.json";
