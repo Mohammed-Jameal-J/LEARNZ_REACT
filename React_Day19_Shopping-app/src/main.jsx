@@ -11,7 +11,7 @@ import store  from "./store";
 import en from "./locales/en.json";
 import ta from "./locales/ta.json";
 import ar from "./locales/ar.json";
-import hi from "./locales/hi.json";
+import i from "./locales/hi.json";
 
 // i18next configuration
 i18n.use(initReactI18next).init({
