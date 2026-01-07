@@ -1,5 +1,6 @@
 import './App.css'
 import Dashboard from './Dashboard'
+import EventComponent from './EventComponent'
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
      <h1>Conditional Rendering</h1>
      <Dashboard />
+     <EventComponent />
     </>
   )
 }
