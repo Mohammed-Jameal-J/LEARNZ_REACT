@@ -25,7 +25,7 @@ const TaskList = () => {
     {tasks.map((item) =>(
         <div key={item.id}>
         {/* <h5>{item}</h5> */}
-        <input type="text" defaultValue={item.value} />
+        <input type="text" value={item.value} />
         <button onClick={()=>removeTask(item.id)}>Delete</button> 
         </div>
         
