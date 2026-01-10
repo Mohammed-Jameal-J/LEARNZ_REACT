@@ -1,7 +1,9 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState ,memo } from 'react'
 
-const AddTodo = ({ handleAddTodo }) => {
+const AddTodo = memo(({ handleAddTodo }) => {
+  console.log("Add Todo Rendered");
+  
     const [text , setText] = useState("");
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,6 +20,6 @@ const AddTodo = ({ handleAddTodo }) => {
     </form>
     </>
   )
-}
+})
 
 export default AddTodo

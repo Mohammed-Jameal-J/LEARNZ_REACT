@@ -1,8 +1,11 @@
 import { useState } from "react"
 import TodoList from "./components/TodoList"
 import AddTodo from "./components/AddTodo"
+import { useCallback } from "react";
 
 function App() {
+  console.log("App Rendered");
+  
   const [todo, setTodo] = useState([
     { id: 1, text: "Learn React", completed: false },
     { id: 2, text: "Build a Todo App", completed: false },
@@ -11,14 +14,14 @@ function App() {
 
   const[searchTerm , setSearchTerm] = useState("")
 
-  const handleAddTodo = (text) => {
+  const handleAddTodo = useCallback((text) => {
     const newTodo = {
       id: todo.length + 1,
       text: text,
       completed: false,
     }
     setTodo([...todo, newTodo])
-  }
+  }, [todo])
   const handleDeleteTodo = (id) => {
     setTodo(todo.filter((item) => item.id !== id))
   }

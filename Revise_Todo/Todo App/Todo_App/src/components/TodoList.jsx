@@ -2,6 +2,7 @@ import React from 'react'
 import TodoItem from './TodoItem'
 
 const TodoList = ({ todo , handleDeleteTodo , handleToggle }) => {
+  console.log("Todo List Rendered");
   return (
     <>
     <ul>

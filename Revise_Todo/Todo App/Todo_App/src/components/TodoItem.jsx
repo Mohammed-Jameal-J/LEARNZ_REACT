@@ -1,6 +1,7 @@
 import React from 'react'
 
 const TodoItem = ({ todo , handleDeleteTodo , handleToggle }) => {
+  console.log("Todo Item Rendered");
   return (
     <>
     <li>
