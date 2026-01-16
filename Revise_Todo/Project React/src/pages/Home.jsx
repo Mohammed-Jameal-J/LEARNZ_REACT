@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <>
     <h4>User Management System</h4>
-    <p>Manage your users with full CRUD</p>
+    <p>Manage </p>
     </>
   )
 }
